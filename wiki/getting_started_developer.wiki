@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+This page introduces the required steps to build this project on your platform.
 
 = Introduction =
 
@@ -14,7 +14,7 @@ This page introduces the required steps to build this project on your platform.
   * ReconstructMe SDK 1.0.0
   
 
-*Instructions*
+*Set up*
   * Checkout code
   * Run CMake GUI and select _source_ folder to GUI and a _build_ folder
     * Press Configure (use native compiler MS Visual Studio 2010 x86)
