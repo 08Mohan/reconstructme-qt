@@ -1,4 +1,4 @@
-This page introduces the required steps to build this project on your platform.
+#summary One-sentence summary of this page.
 
 = Introduction =
 
