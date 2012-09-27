@@ -1,8 +1,6 @@
 #summary One-sentence summary of this page.
 #labels reconstructme,reconstructmesdk
 
-A real time 3D surface reconstruction software.
-
 = Introduction = 
 
 A real time 3D surface reconstruction software.
