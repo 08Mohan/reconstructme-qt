@@ -19,9 +19,9 @@ This page introduces the required steps to build this project on your platform.
   * Run CMake GUI and select _source_ folder to GUI and a _build_ folder
     * Press Configure (use native compiler MS Visual Studio 2010 x86)
     * ReconstructMeSDK and Qt should be found. (Maybe the path to qt bin folder has to be added manually to the PATH environment variable)
-    * Don't matter about google protocol buffers. This is shipped in the 3rd_party folder, and the dependencies are set in CMakeLists.txt. You can see this in the output of the CMake GUI.
+    * Don't matter about google protocol buffers in CMake, since this is shipped in the 3rd_party folder, and the dependencies are set in CMakeLists.txt. You can see this in the output of the CMake GUI.
     * Press generate.
-  * Now, you should have an solution called ReconstructMeQt.sln.
-  * Open the solution. 
-  * Build the Project ReconstructMeGUI in Release mode.
+  * Now, you have a solution called ReconstructMeQt.sln.
+  * Open the solution.
+  * Build the Project ReconstructMeGUI in *Release* mode (*Debug* mode is not supported at the moment).
   * Now you can start ReconstructMeGUI.exe
