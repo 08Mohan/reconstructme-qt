@@ -10,7 +10,7 @@ This page introduces the required steps to build this project on your platform.
 *Tools/Framewoks Required*
   * CMake 2.8.5 or higher
   * MS Visual Studio 2010
-  * Qt Desktop MSVSC10 4.8.{1,2,3}
+  * Qt Desktop MSVS10 4.8.{1,2,3}
   * ReconstructMeSDK 1.0.0
   
 
