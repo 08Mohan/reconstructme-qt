@@ -21,7 +21,7 @@ This page introduces the required steps to build this project on your platform.
     * ReconstructMeSDK and Qt will be found by CMake if the Libraries are installed. (It could be that you have to set the path to _Qt bin folder_ manually in the PATH environment variable)
     * Don't matter about google protocol buffers in CMake, since this is shipped in the 3rd_party folder, and the dependencies are set in CMakeLists.txt. You can see this in the output of the CMake GUI.
     * Press generate.
-  * Now, you have a solution called ReconstructMeQt.sln.
+  * Now, you have a solution called reconstructme-qt.sln.
   * Open the solution.
-  * Build the Project ReconstructMeGUI in *Release* mode (*Debug* mode is not supported at the moment).
-  * Now you can start ReconstructMeGUI.exe
+  * Build the Project ReconstructMeQt in *Release* mode (*Debug* mode is not supported at the moment).
+  * Now you can start ReconstructMeQt.exe
