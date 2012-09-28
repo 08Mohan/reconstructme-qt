@@ -11,7 +11,7 @@ This page introduces the required steps to build this project on your platform.
   * CMake 2.8.5 or higher
   * MS Visual Studio 2010
   * Qt Desktop MSVSC10 4.8.{1,2,3}
-  * ReconstructMe SDK 1.0.0
+  * ReconstructMeSDK 1.0.0
   
 
 *Set up*
