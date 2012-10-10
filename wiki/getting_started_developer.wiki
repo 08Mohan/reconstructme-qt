@@ -22,7 +22,7 @@ This page introduces the required steps to build and install this project on you
     * Press generate.
   * Now, you have a solution called reconstructme-qt.sln.
   * Open the solution.
-  * Build the Project ReconstructMeQt in *Release* mode (*Debug* mode is not supported at the moment).
+  * Build the Project ReconstructMeQt.
   * Now you can start ReconstructMeQt.exe
 
 = Generating the Installer =
