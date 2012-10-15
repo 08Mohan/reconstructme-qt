@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>ReconstructMe - Staus</string>
+   <string>TanaScan - Staus</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="0">
