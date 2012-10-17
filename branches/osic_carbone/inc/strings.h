@@ -57,7 +57,7 @@ namespace ReconstructMeGUI {
   const char* const run_failed_tag = "Could not start scanner. No sensor or no valid context detected. Please review your settings.";
 
   // reconstructme strings
-  const char* const welcome_tag = "Welcome to ReconstructMe";
+  const char* const welcome_tag = "Welcome to TanaScan";
   const char* const create_views_tag = "Creating views";
   const char* const reload_settings_tag = "Reload settings";
   const char* const init_scanner_tag = "Intializing scanning environment";

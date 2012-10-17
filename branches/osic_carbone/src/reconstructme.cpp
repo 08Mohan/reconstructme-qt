@@ -80,7 +80,7 @@ namespace ReconstructMeGUI {
     ui(new Ui::reconstructme_mw)
   {
     // Splashscreen
-    QPixmap splashPix(":/images/splash_screen.png");
+    QPixmap splashPix(":/images/osic/osic_splash.png");
     splash = new QSplashScreen(this, splashPix);
     splash->setAutoFillBackground(false);
     splash->showMessage(welcome_tag, SPLASH_MSG_ALIGNMENT);

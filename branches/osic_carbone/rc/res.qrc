@@ -57,6 +57,7 @@
 		<file>images/no_image_available.png</file>
 		<file>images/osic/osic.png</file>
 		<file>images/osic/osic_text.png</file>
+		<file>images/osic/osic_splash.png</file>
     </qresource>
     <qresource prefix="/styles">
         <file>stylesheet.qss</file>
