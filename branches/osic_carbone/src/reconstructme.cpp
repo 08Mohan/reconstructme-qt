@@ -137,10 +137,12 @@ namespace ReconstructMeGUI {
     app_about_dialog->connect(ui->actionAbout, SIGNAL(triggered()), SLOT(show()));
     hw_key_dialog->connect(ui->actionGenerate_hardware_key, SIGNAL(triggered()), SLOT(show()));
     
-    
     connect(ui->actionLog, SIGNAL(toggled(bool)), SLOT(action_log_toggled(bool)));
     ui->actionLog->connect(log_dialog, SIGNAL(close_clicked()), SLOT(toggle()));
     
+    // Select Configuration
+    dialog_settings->connect(ui->actionSelect_Configuration, SIGNAL(triggered()), SLOT(browse_configuration_file()));
+
     // interaction with scanner
     qRegisterMetaType<init_t>( "mode_t" );
     scanner->connect(ui->play_button, SIGNAL(clicked()), SLOT(toggle_play_pause()));

@@ -238,6 +238,14 @@ namespace ReconstructMeGUI {
         (file_path == sens_path)   )  )
       emit initialize();
   }
+
+  void settings_dialog::browse_configuration_file() {
+    QString selected_file = get_file_from_dialog(cfg_path, QString("Configruation files (*.txt);; All files (*.*)"));
+    if (selected_file == "") return;
+
+    ui->config_path_tb->setText(selected_file); 
+    accept();
+  }
 }
 
 

@@ -65,6 +65,9 @@ namespace ReconstructMeGUI {
     virtual void accept();
     /** Discard changes */
     virtual void reject();
+
+    void browse_configuration_file();
+
   private slots:
     /** Open file dialog */
     void browse_config_button_clicked();
