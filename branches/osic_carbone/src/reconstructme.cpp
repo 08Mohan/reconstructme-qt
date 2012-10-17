@@ -88,6 +88,21 @@ namespace ReconstructMeGUI {
 
     ui->setupUi(this);
     
+    fps_label = new QLabel();
+    fps_label->setStyleSheet("qproperty-alignment: AlignRight; margin-right: 0px; padding-right: 0px;");
+    fps_label->setMaximumWidth(100);
+    fps_label->setToolTip(tool_tip_fps_label_tag);
+    
+    fps_color_label = new QLabel();
+    fps_color_label->setMinimumWidth(10);
+    fps_color_label->setMaximumWidth(10);
+    fps_color_label->setStyleSheet("margin-left: 0px; padding-left: 0px;");
+    fps_color_label->setAutoFillBackground(true);
+    fps_color_label->setToolTip(tool_tip_fps_color_label_tag);
+
+    statusBar()->addPermanentWidget(fps_label, 0);
+    statusBar()->addPermanentWidget(fps_color_label, 0);
+
     // move to center
     QRect r = geometry();
     r.moveCenter(QApplication::desktop()->availableGeometry().center());
@@ -136,7 +151,7 @@ namespace ReconstructMeGUI {
     connect(ui->save_button, SIGNAL(clicked()), SLOT(save_button_clicked()));
     connect(ui->actionSave, SIGNAL(triggered()), SLOT(save_button_clicked()));
     connect(scanner, SIGNAL(status_bar_msg(const QString&, const int)), SLOT(status_bar_msg(const QString &, const int)));
-
+    connect(scanner, SIGNAL(current_fps(const float)), SLOT(show_fps(const float)));
 
     // views update
     connect(initializer, SIGNAL(initialized_images()), SLOT(set_image_references()), Qt::BlockingQueuedConnection);
@@ -197,7 +212,7 @@ namespace ReconstructMeGUI {
     phong_canvas->set_image_size(initializer->phong_size());
     depth_canvas->set_image_size(initializer->depth_size());
 
-    scanner->set_rgb_image  (rgb_canvas->image());
+    scanner->set_rgb_image(rgb_canvas->image());
     scanner->set_phong_image(phong_canvas->image());
     scanner->set_depth_image(depth_canvas->image());
   }
@@ -338,5 +353,16 @@ namespace ReconstructMeGUI {
 
   void reconstructme::status_bar_msg(const QString &msg, const int msecs) {
     statusBar()->showMessage(msg, msecs);
+  }
+
+  void reconstructme::show_fps(const float fps) {
+    if (fps > 20) 
+      fps_color_label->setStyleSheet("background-color: green;");
+    else if (fps > 10)
+      fps_color_label->setStyleSheet("background-color: orange;");
+    else
+      fps_color_label->setStyleSheet("background-color: #FF4848;");
+    
+    fps_label->setText(QString().sprintf("%.2f fps", fps));
   }
 }

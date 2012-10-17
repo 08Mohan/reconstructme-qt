@@ -139,15 +139,15 @@ namespace ReconstructMeGUI {
       bool img_succ = true;
 
       img_succ = REME_SUCCESS(reme_image_create(_c, &_rgb));
-      img_succ = img_succ && REME_SUCCESS(reme_image_get_info(_c, _rgb, &width, &height));
+      img_succ = img_succ && REME_SUCCESS(reme_sensor_get_image_size(_c, _s, REME_IMAGE_AUX, &width, &height));
       _rgb_size = img_succ ? new QSize(width, height) : 0;
 
       img_succ = REME_SUCCESS(reme_image_create(_c, &_depth));
-      img_succ = img_succ && REME_SUCCESS(reme_image_get_info(_c, _depth, &width, &height));
+      img_succ = img_succ && REME_SUCCESS(reme_sensor_get_image_size(_c, _s, REME_IMAGE_DEPTH, &width, &height));
       _depth_size = img_succ ? new QSize(width, height) : 0;
 
       img_succ = REME_SUCCESS(reme_image_create(_c, &_phong));
-      img_succ = img_succ && REME_SUCCESS(reme_image_get_info(_c, _phong, &width, &height));
+      img_succ = img_succ && REME_SUCCESS(reme_sensor_get_image_size(_c, _s, REME_IMAGE_VOLUME, &width, &height));
       _phong_size = img_succ ? new QSize(width, height) : 0;
       
       emit initialized_images();
