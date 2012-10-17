@@ -39,23 +39,37 @@
 #include "qglcanvas.h"
 #include "mutex.h"
 
+#include <QSize>
+
 namespace ReconstructMeGUI {
 
   
-  QGLCanvas::QGLCanvas(QWidget* parent) : QGLWidget(parent), default_img(":/images/no_image_available.png") {
-    img = &default_img;
+  QGLCanvas::QGLCanvas(QString &default_img_path, QString &logo_image, QWidget* parent) : QGLWidget(parent), 
+    default_img(default_img_path), 
+    logo(logo_image) {
+    
+    set_image_size(0);
   }
 
   void QGLCanvas::set_image_size(const QSize* size) {
-    if (size != 0)
+    if (size != 0) 
       img = new QImage(*size, QImage::Format_RGB888);
     else 
       img = &default_img;
+    
     repaint();
   }
 
   QImage* QGLCanvas::image() {
     return img;
+  }
+
+  void QGLCanvas::resizeEvent(QResizeEvent*event) {
+    logo_rect = this->rect();
+    QSize s = logo.size();
+    s.scale(logo_rect.size(), Qt::KeepAspectRatio);
+    logo_rect.setTop(logo_rect.bottom()-s.height());
+    logo_rect.setSize(s);
   }
 
   void QGLCanvas::paintEvent(QPaintEvent* ev) {
@@ -65,6 +79,9 @@ namespace ReconstructMeGUI {
     //Set the painter to use a smooth scaling algorithm.
     p.setRenderHint(QPainter::SmoothPixmapTransform, 1);
     p.drawImage(this->rect(), *img);
+    
+    p.drawImage(logo_rect, logo);
+
     p.end();
   }
 }
